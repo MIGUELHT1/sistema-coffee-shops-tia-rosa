@@ -1,82 +1,94 @@
 # ☕ Coffee Shops Tia Rosa
 
-Aplicação de terminal desenvolvida em Python para praticar os fundamentos de programação orientada a objetos e simular o gerenciamento básico de uma cafeteria.
-
-## 📋 Sobre o projeto
-
-O sistema permite cadastrar clientes e produtos, registrar pedidos e consultar os pedidos realizados durante a execução da aplicação.
-
-Este projeto foi desenvolvido como exercício prático de programação. Os dados são mantidos em memória e não são persistidos após o encerramento do programa.
+Sistema de terminal desenvolvido em Python para simular o gerenciamento básico de uma cafeteria. O projeto pratica Programação Orientada a Objetos, organização em módulos e validação de entradas.
 
 ## ✨ Funcionalidades
 
-- **Cadastro de clientes:** registra nome e telefone.
-- **Cadastro de produtos:** registra nome, preço e descrição.
-- **Registro de pedidos:** associa um cliente a um ou mais produtos.
-- **Cálculo de total:** soma os preços dos produtos selecionados.
-- **Consulta de pedidos:** lista os pedidos registrados durante a execução.
-- **Menu interativo:** navegação por opções no terminal.
+- Cadastro de clientes com nome e telefone.
+- Cadastro de produtos com nome, preço e descrição.
+- Criação de pedidos associados a um cliente.
+- Seleção de vários produtos por pedido.
+- Cálculo e consulta do total dos pedidos.
+- Validação básica de entradas e opções inválidas.
 
-## 🧰 Tecnologias
+## 🧰 Tecnologias e conceitos
 
-- Python 3
+- **Python 3**
 - Programação Orientada a Objetos (POO)
-- Estruturas de dados nativas do Python
+- Módulos e pacotes
+- Listas e estruturas de controle
+- Tratamento de exceções
 
 ## ▶️ Como executar
 
-1. Clone este repositório:
+1. Clone o repositório:
 
    ```bash
    git clone https://github.com/MIGUELHT1/sistema-coffee-shops-tia-rosa.git
    ```
 
-2. Entre na pasta do projeto:
+2. Acesse a pasta:
 
    ```bash
    cd sistema-coffee-shops-tia-rosa
    ```
 
-3. Execute o programa:
+3. Execute pela raiz do projeto:
 
    ```bash
    python ATIVIDADEATIVA.py
    ```
 
-   Se necessário, utilize `python3` no lugar de `python`.
+   Também é possível executar com `python -m coffee_shop.main`.
 
-Não há dependências externas: o projeto utiliza apenas recursos nativos do Python.
+Não são necessárias dependências externas. O projeto utiliza apenas a biblioteca padrão do Python.
 
-## 🗂️ Estrutura atual
+## 📁 Estrutura do projeto
 
 ```text
 sistema-coffee-shops-tia-rosa/
-└── ATIVIDADEATIVA.py
+├── coffee_shop/
+│   ├── __init__.py
+│   ├── clientes.py
+│   ├── data.py
+│   ├── main.py
+│   ├── models.py
+│   ├── pedidos.py
+│   └── produtos.py
+├── .gitignore
+├── ATIVIDADEATIVA.py
+└── README.md
 ```
 
-## 🧠 Conceitos praticados
+### Organização dos módulos
 
-- Criação de classes e objetos (`Cliente`, `Produto` e `Pedido`).
-- Métodos construtores e atributos de instância.
-- Listas para armazenar dados durante a execução.
-- Funções, laços de repetição e estruturas condicionais.
-- Entrada e saída de dados pelo terminal.
-- Tratamento básico de entradas inválidas.
+| Arquivo | Responsabilidade |
+|---|---|
+| `models.py` | Classes Cliente, Produto e Pedido |
+| `data.py` | Listas usadas para armazenar os dados durante a execução |
+| `clientes.py` | Cadastro de clientes |
+| `produtos.py` | Cadastro e validação de produtos |
+| `pedidos.py` | Criação e consulta de pedidos |
+| `main.py` | Menu principal da aplicação |
+| `ATIVIDADEATIVA.py` | Arquivo de inicialização |
 
-## 🔧 Próximas melhorias
+## ⚠️ Limitações atuais
 
-- Validar entradas, preços e índices selecionados.
-- Persistir clientes, produtos e pedidos em banco de dados.
-- Separar o código em módulos.
-- Adicionar testes automatizados.
-- Evoluir a aplicação para uma API REST.
+Os dados ficam armazenados apenas em memória. Ao fechar o programa, clientes, produtos e pedidos são perdidos. O projeto ainda não utiliza banco de dados nem possui uma interface gráfica ou API.
+
+## 🛣️ Próximas melhorias
+
+- Persistência de dados com SQLite.
+- Testes automatizados com `unittest` ou `pytest`.
+- Separação entre regras de negócio e interface de terminal.
+- Evolução futura para uma API REST.
 
 ## 👨‍💻 Autor
 
-**Miguel Miranda** — estudante de Engenharia de Software e desenvolvedor em formação, com foco de estudos em Backend Java.
+**Miguel Miranda** — estudante de Engenharia de Software, direcionando os estudos para desenvolvimento Backend.
 
-- GitHub: [@MIGUELHT1](https://github.com/MIGUELHT1)
+[GitHub: @MIGUELHT1](https://github.com/MIGUELHT1)
 
 ---
 
-<p align="center">Projeto de aprendizado — em evolução.</p>
+<p align="center">Projeto de aprendizado em evolução.</p>
