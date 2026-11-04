@@ -24,7 +24,7 @@ def fazer_pedido():
     while True:
         print("\nProdutos disponíveis:")
         for indice, produto in enumerate(produtos):
-            print(f"[{indice}] {produto.nome} - R$\{produto.preco:.2f}")
+            print(f"[{indice}] {produto.nome} - R$" f"{produto.preco:.2f}")
 
         opcao = input("Digite o número do produto ou 'fim' para encerrar: ").strip().lower()
         if opcao == "fim":
@@ -44,7 +44,7 @@ def fazer_pedido():
     pedido = Pedido(cliente, itens)
     pedidos.append(pedido)
     print(f"Pedido realizado com sucesso para {cliente.nome}!")
-    print(f"Total do pedido: R$\{pedido.total:.2f}")
+    print(f"Total do pedido: R$" f"{pedido.total:.2f}")
 
 
 def ver_pedidos():
@@ -54,4 +54,4 @@ def ver_pedidos():
 
     print("\n=== PEDIDOS REALIZADOS ===")
     for indice, pedido in enumerate(pedidos, start=1):
-        print(f"Pedido {indice} - Cliente: {pedido.cliente.nome} - Total: R$\{pedido.total:.2f}")
+        print(f"Pedido {indice} - Cliente: {pedido.cliente.nome} - Total: R$" f"{pedido.total:.2f}")
