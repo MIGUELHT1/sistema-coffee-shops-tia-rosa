@@ -1,12 +1,13 @@
 # Coffee Shops Tia Rosa
 
-Aplicação de terminal desenvolvida em Python para simular o gerenciamento básico de uma cafeteria. O projeto foi criado para praticar Programação Orientada a Objetos, organização em módulos e validação de entradas.
+Aplicação de terminal desenvolvida em Python para simular o gerenciamento básico de uma cafeteria. O projeto pratica Programação Orientada a Objetos, organização em módulos, validação de entradas e testes unitários.
 
 <div align="center">
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Paradigma](https://img.shields.io/badge/Paradigma-POO-6C5CE7?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Projeto%20de%20estudo-555555?style=flat-square)
+![Testes](https://img.shields.io/badge/Testes-unittest-555555?style=flat-square)
+![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 
 </div>
 
@@ -26,6 +27,8 @@ Aplicação de terminal desenvolvida em Python para simular o gerenciamento bás
 - Módulos e pacotes
 - Listas e estruturas de controle
 - Tratamento de exceções
+- Testes unitários com `unittest`
+- Integração contínua com GitHub Actions
 
 ## Como executar
 
@@ -55,10 +58,25 @@ Aplicação de terminal desenvolvida em Python para simular o gerenciamento bás
    python -m coffee_shop.main
    ```
 
+## Testes automatizados
+
+Os testes unitários verificam os modelos de cliente, produto e pedido, incluindo o cálculo do valor total.
+
+Execute todos os testes pela raiz do projeto:
+
+```bash
+python -m unittest discover -v
+```
+
+O GitHub Actions está configurado para executar essa suíte automaticamente em cada push para `main` e em pull requests direcionados à branch `main`. O resultado da primeira execução pode ser acompanhado na aba **Actions** do repositório.
+
 ## Estrutura do projeto
 
 ```text
 sistema-coffee-shops-tia-rosa/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
 ├── coffee_shop/
 │   ├── __init__.py
 │   ├── clientes.py
@@ -67,6 +85,9 @@ sistema-coffee-shops-tia-rosa/
 │   ├── models.py
 │   ├── pedidos.py
 │   └── produtos.py
+├── tests/
+│   ├── __init__.py
+│   └── test_models.py
 ├── .gitignore
 ├── ATIVIDADEATIVA.py
 └── README.md
@@ -82,19 +103,20 @@ sistema-coffee-shops-tia-rosa/
 | `produtos.py` | Cadastro e validação de produtos |
 | `pedidos.py` | Criação e consulta de pedidos |
 | `main.py` | Menu principal da aplicação |
-| `ATIVIDADEATIVA.py` | Ponto de entrada alternativo |
+| `tests/test_models.py` | Testes unitários dos modelos |
+| `.github/workflows/tests.yml` | Automação da execução dos testes |
 
 ## Limitações conhecidas
 
 - Os dados ficam armazenados apenas em memória e são perdidos ao encerrar o programa.
 - O projeto ainda não utiliza banco de dados.
 - A interface é executada somente pelo terminal.
-- Não há testes automatizados documentados neste momento.
+- A cobertura atual de testes está concentrada nos modelos; os fluxos interativos ainda podem receber testes específicos.
 
 ## Próximas melhorias
 
 - Adicionar persistência de dados com SQLite.
-- Criar testes automatizados com `unittest` ou `pytest`.
+- Ampliar os testes para os fluxos de cadastro e pedidos.
 - Separar melhor as regras de negócio da interface de terminal.
 - Avaliar uma futura versão com API REST.
 
