@@ -1,5 +1,8 @@
 # Coffee Shops Tia Rosa
 
+![Testes automatizados](https://github.com/MIGUELHT1/sistema-coffee-shops-tia-rosa/actions/workflows/tests.yml/badge.svg)
+
+
 Aplicação de terminal desenvolvida em Python para simular o gerenciamento básico de uma cafeteria. O projeto pratica Programação Orientada a Objetos, organização em módulos, validação de entradas e testes unitários.
 
 <div align="center">
